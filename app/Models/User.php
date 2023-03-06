@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // metodo per controllare che le credenziali siano presenti nel db
+    public static function checkCredentials(string $username,string $password): bool
+    {
+        // chiamata al db
+        return false;
+    }
+
+    // metodo per aggiungere un utente al db
+    public static function addUser(): bool
+    {
+        return false;
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index')->name('main');
 
 // login
-Route::get('/signin', [LoginController::class, 'index'])->name('login');
+Route::view('/signin', 'signin')
+  ->name('signin')
+  ->middleware('check.inputs');
+
+Route::post('/signin', [LoginController::class, 'getCredential']);
+
+// registrazione
+Route::view('/signup', 'signup')
+  ->name('signup')
+  ->middleware('check.inputs');
+  
+Route::post('/signup', [SignupController::class, 'addUser']);

@@ -20,14 +20,12 @@ Route::view('/', 'index')->name('main');
 
 // login
 Route::view('/signin', 'signin')
-  ->name('signin')
-  ->middleware('check.inputs');
+  ->name('signin');
 
 Route::post('/signin', [LoginController::class, 'getCredential']);
 
 // registrazione
 Route::view('/signup', 'signup')
-  ->name('signup')
-  ->middleware('check.inputs');
+  ->name('signup');
   
 Route::post('/signup', [SignupController::class, 'addUser']);

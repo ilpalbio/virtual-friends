@@ -7,8 +7,8 @@
   <form action="" method="POST">
     @csrf
 
-    Username: <input type="text" name="inpUsername"> <br><br>
-    Password: <input type="text" name="inpPassword"> <br><br>
+    Email: <input type="text" name="email"> <br><br>
+    Password: <input type="text" name="password"> <br><br>
 
     <a href="/signup">SIGN UP</a> <br><br>
 

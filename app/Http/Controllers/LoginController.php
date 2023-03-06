@@ -8,20 +8,20 @@ use App\Models\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
-class LoginController extends Controller
-{
+class LoginController extends Controller {
     // metodo per ottenere le credenziali della pagina
-    public function getCredential(Request $request): RedirectResponse
-    {
-        $username = $request->input('username');
-        $password = $request->input('password');
+    public function getCredential(Request $request): RedirectResponse {   
+        // validazione degli input
+        $validated = $request->validate([
+            'email' => 'required | email',
+            'password' => 'required | string',
+        ]);
 
         // controllo che le credenziali siano corrette
-        if (User::checkCredentials($username, $password))
-        {
+        if (User::checkCredentials($validated['email'], $validated['password'])) {
             // redirect alla pagina home
         }
         
-        return redirect('singin');
+        return redirect()->route('signin');
     }
 }

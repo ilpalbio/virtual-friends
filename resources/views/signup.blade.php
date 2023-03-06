@@ -3,23 +3,23 @@
 @section('content')
   <h1>SIGN UP PAGE</h1>
 
-  <form action="">
+  <form action="" method="POST">
     @csrf
 
     {{-- Richiesta delle informazioni --}}
     <fieldset>
       <legend>Personal Informations</legend>
-      Name: <input type="text" name="inpName"> <br><br>
-      Surname: <input type="text" name="inpSurname"> <br><br>
-      Phone Number (optional): <input type="text" name="inpTel">
+      Name: <input type="text" name="name"> <br><br>
+      Surname: <input type="text" name="surname"> <br><br>
+      Phone Number (optional): <input type="text" name="tel">
     </fieldset><br>
 
     <fieldset>
       <legend>Credentials</legend>
-      Username: <input type="text" name="inpUsername"> <br><br>
-      Email: <input type="text" name="inpEmail"> <br><br>
-      Password: <input type="password" name="inpPassword"> <br><br>
-      Confirm Password: <input type="password" name="inpPasswordConfirmation">
+      Username: <input type="text" name="username"> <br><br>
+      Email: <input type="text" name="email"> <br><br>
+      Password: <input type="password" name="password"> <br><br>
+      Confirm Password: <input type="password" name="password_confirmation">
     </fieldset><br><br>
 
     {{-- Captcha --}}
